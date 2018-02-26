@@ -8,18 +8,10 @@ import java.util.Map;
  */
 public class UserInfo implements Serializable{
 
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
 
     private String username;
     private String pswd;
-    private Map store;
-
-    public UserInfo() {
-        // TODO Auto-generated constructor stub
-    }
 
 
     public String getUsername() {

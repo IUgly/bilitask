@@ -4,18 +4,18 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * 解决不能跨域访问的问题
+ *
+ */
 public class CorsFilter implements Filter{
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-// TODO Auto-generated method stub
-
     }
-
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException,
             ServletException {
-// TODO Auto-generated method stub
         HttpServletResponse res = (HttpServletResponse) response;
         res.setContentType("text/html;charset=UTF-8");
         res.setHeader("Access-Control-Allow-Origin", "*");
@@ -29,8 +29,6 @@ public class CorsFilter implements Filter{
 
     @Override
     public void destroy() {
-// TODO Auto-generated method stub
-
     }
 
 }

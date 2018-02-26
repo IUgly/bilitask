@@ -43,10 +43,7 @@ public class VideoCountServlet extends HttpServlet {
                 }
             }
         }
-
         response.getOutputStream().write(resp.toString().getBytes());
         response.getOutputStream().flush();
     }
-
-
 }

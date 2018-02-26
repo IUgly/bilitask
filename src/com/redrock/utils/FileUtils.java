@@ -14,6 +14,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * 文件操作的工具类
+ */
 public class FileUtils {
 
 	private FileUtils() {

@@ -63,14 +63,4 @@ public class LoginServlet extends HttpServlet {
         response.getOutputStream().write(resp.toString().getBytes());
         response.getOutputStream().flush();
     }
-
-
-
-
-    @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-    }
-
-
 }

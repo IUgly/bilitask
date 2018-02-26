@@ -59,18 +59,7 @@ public class RegisterServlet extends HttpServlet {
             resp.put("errorcode", 3);
             resp.put("desc", "failed to insert user into databasr");
         }
-
         response.getOutputStream().write(resp.toString().getBytes());
         response.getOutputStream().flush();
-    }
-
-    @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-    }
-
-    @Override
-    public void init() throws ServletException {
-        // service = new RegisterDao();
     }
 }

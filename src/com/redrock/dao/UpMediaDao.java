@@ -1,6 +1,5 @@
 package com.redrock.dao;
 
-import com.redrock.service.UpMediaServce;
 import com.redrock.utils.JDBC;
 
 import java.util.List;

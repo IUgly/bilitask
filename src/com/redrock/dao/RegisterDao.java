@@ -1,7 +1,6 @@
 package com.redrock.dao;
 
 import com.redrock.utils.JDBC;
-//import org.springframework.jdbc.support.JdbcUtils;
 
 import java.util.List;
 public class RegisterDao  {
@@ -16,13 +15,11 @@ public class RegisterDao  {
             }
         }catch(Exception e){
             e.printStackTrace();
-            return 2; // database exception
+            // database exception
+            return 2;
         }
-        //finally{
-        jdbcUtils.releaseConn();
-          //  return 3; // other errors
-        //}
 
+        jdbcUtils.releaseConn();
         return 0;
     }
 
