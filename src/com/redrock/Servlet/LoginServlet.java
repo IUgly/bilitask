@@ -4,6 +4,7 @@ import com.redrock.Secret.Token;
 import com.redrock.dao.LoginDao;
 import com.redrock.service.LoginService;
 import net.sf.json.JSONObject;
+import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,9 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.lang.reflect.InvocationTargetException;
+import java.util.*;
 
 /**
  * @author ugly
@@ -26,10 +26,10 @@ public class LoginServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException,IOException{
 
-        String userName=request.getParameter("username");
-        String pswd=request.getParameter("pswd");
+        String userName = request.getParameter("username");
+        String pswd = request.getParameter("pswd");
 
-        if (null == userName || userName.isEmpty() || null == pswd || pswd.isEmpty()) {
+        if (null == userName  || null == pswd || pswd.isEmpty()) {
             JSONObject resp = new JSONObject();
             resp.put("errorcode", 1);
             resp.put("desc", "parameter error");

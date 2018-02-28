@@ -28,9 +28,11 @@ public class UpMediaServlet extends HttpServlet {
         throws ServletException,IOException{
         String title = request.getParameter("title");
         String descript = request.getParameter("descript");
+        String sort = request.getParameter("sort");
         String strtoken = request.getParameter("token");
 
-        if (title==null || title.isEmpty()||strtoken==null||strtoken.isEmpty()){
+        if (title==null || title.isEmpty()||strtoken==null||
+                strtoken.isEmpty()||sort==null||sort.isEmpty()){
             JSONObject resp =new JSONObject();
             resp.put("errorcode",1);
             resp.put("desc","video infomation error");
@@ -58,7 +60,11 @@ public class UpMediaServlet extends HttpServlet {
                 List<String> filePaths = FileUtils.upload(request,
                         "videos/",
                         ".mp4 .flv. 3gp .avi .rmvb");
+//                List<String> picfilePaths = FileUtils.upload(request,
+//                        "videopictrue/",
+//                        "jpg . png ");
                 String rootdir = getServletContext().getRealPath("/");
+//                String rootdirpic = getServletContext().getRealPath("/");
 
 
                 if (filePaths.isEmpty()) {
@@ -69,6 +75,8 @@ public class UpMediaServlet extends HttpServlet {
                     arg.add(title);
                     arg.add(descript);
                     arg.add(filePaths.get(0).substring(rootdir.length()));
+                    arg.add(sort);
+//                    arg.add(picfilePaths.get(0).substring(rootdirpic.length()));
                     arg.add(token.getUserName());
 
                     UpMediaDao rd = new UpMediaDao();
@@ -89,12 +97,5 @@ public class UpMediaServlet extends HttpServlet {
         }
         response.getOutputStream().write(resp.toString().getBytes());
         response.getOutputStream().flush();
-    }
-
-
-
-    @Override
-    public void init() throws ServletException {
-        UpMediaDao service = new UpMediaDao();
     }
 }

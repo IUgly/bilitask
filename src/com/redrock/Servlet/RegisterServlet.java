@@ -18,13 +18,8 @@ import java.util.List;
 @WebServlet(name = "register",urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
 
-    /**
-     *
-     */
+
     private static final long serialVersionUID = 1L;
-    //private RegisterService service;
-
-
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

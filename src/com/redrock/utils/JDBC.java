@@ -292,8 +292,5 @@ public class JDBC {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-
     }
-
 }
