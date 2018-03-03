@@ -153,7 +153,7 @@ $.ajax(settings).done(function (response) {
     "errorcode": 3,
     "desc": "invalid token"
 }
-
+```
 >拉取用户上传的视频列表
 >>请求
 ```javascipt
@@ -214,4 +214,117 @@ $.ajax(settings).done(function (response) {
 >>>失败提示符
 ```json
 {"errorcode":2,"desc":"invalid token"}
+```
+
+>获取当前用户上传视频总数
+>>请求
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://localhost:8080/videocount?token=dHpjqCuwdG9EbdeeUqXRVcM0JqlCoTLxmkzEg1tXNx_O5vpTxg-v9QiNFfwKUjjk3wdl_ucVBInqldR5LhYtHFVhDAST2Vyx6VDD2FwF9JEgxFKXVB23VJduAXIcyltTBh9uwpXspZn3GwUiVi6BnA==",
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "71f5d922-40c7-572a-1110-81eaec14c237"
+  },
+  "data": {
+    "username": "kuang",
+    "pswd": "123456"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+>>返回
+```json
+{
+    "errorcode": 0,
+    "desc": "success",
+    "count": 3
+}
+{
+    "errorcode": 3,
+    "desc": "invalid token"
+}
+```
+>用户添加评论
+>>请求
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://localhost:8080/addcomment?videoid=13&token=dHpjqCuwdG9EbdeeUqXRVcM0JqlCoTLxmkzEg1tXNx_O5vpTxg-v9QiNFfwKUjjk3wdl_ucVBInqldR5LhYtHFVhDAST2Vyx6VDD2FwF9JEgxFKXVB23VJduAXIcyltTTdW5axk8SIuqt8xpbeGxpw==",
+  "method": "POST",
+  "headers": {
+    "Cache-Control": "no-cache",
+    "Postman-Token": "795ea8e1-d9fa-51d5-d3c6-6ca0924b81b5"
+  },
+  "data": "23333"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+>>返回
+```json
+{
+    "errorcode": 0,
+    "desc": "comment success"
+}
+{
+    "errorcode": 3,
+    "desc": "token invalid"
+}
+```
+>拉取视频评论列表
+>>请求
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://localhost:8080/commentlist?videoid=13&start=0&count=10",
+  "method": "GET",
+  "headers": {
+    "Cache-Control": "no-cache",
+    "Postman-Token": "52604c95-76fb-dc6f-5524-6d0ecfa95ed3"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+>>返回
+```json
+{
+    "errorcode": 0,
+    "desc": "suceess",
+    "comment": [
+        {
+            "content": "23333",
+            "username": "kuang"
+        },
+        {
+            "content": "hhhh",
+            "username": "kuang"
+        },
+        {
+            "content": "66666",
+            "username": "kuang"
+        },
+        {
+            "content": "99999",
+            "username": "kuang"
+        },
+        {
+            "content": "99999",
+            "username": "kuang"
+        }
+    ]
+}
 ```
