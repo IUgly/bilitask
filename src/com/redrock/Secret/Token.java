@@ -6,6 +6,9 @@ import javax.crypto.spec.SecretKeySpec;
 import java.io.*;
 import java.util.*;
 
+/**
+ * @author ugly
+ */
 public class Token implements Serializable, List<Object> {
     String userName;
     long expiredTime;

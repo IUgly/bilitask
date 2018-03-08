@@ -21,6 +21,9 @@
           <element id="library" level="project" name="Maven: commons-pool:commons-pool:20030825.183949" />
         </element>
       </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/out/artifacts/bili_war_exploded/META-INF/MANIFEST.MF" />
+      </element>
     </root>
   </artifact>
 </component>

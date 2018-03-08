@@ -2,8 +2,7 @@ package com.redrock.Servlet;
 
 import com.redrock.Secret.Token;
 import com.redrock.dao.DeleteMediaDao;
-import com.redrock.dao.PointSqlDao;
-import com.redrock.service.DeleteMediaService;
+import com.redrock.dao.IdPointSrcDao;
 import com.redrock.utils.FileUtils;
 import net.sf.json.JSONObject;
 
@@ -17,10 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author ugly
+ */
 @WebServlet(name = "deletemedia",urlPatterns = "/deletemedia")
 public class DeleteMediaServlet extends HttpServlet {
-
-    private static final long serialVersionUID = 1L;
 
     @Override
     public void doDelete(HttpServletRequest request, HttpServletResponse response)
@@ -46,8 +46,8 @@ public class DeleteMediaServlet extends HttpServlet {
                 resp.put("errorcode", 4);
                 resp.put("desc", "token expired");
             } else {
-                PointSqlDao pd=new PointSqlDao();
-                Map fileroot = pd.PointSqlUser(id);
+                IdPointSrcDao pd=new IdPointSrcDao();
+                Map fileroot = pd.IdPointSrc(id);
 
                 String path = getServletContext().getRealPath(String.valueOf(fileroot.get("src")));
                 FileUtils.DeleteFileUtil.deleteFile(path);
