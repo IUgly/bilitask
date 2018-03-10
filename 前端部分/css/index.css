@@ -1,0 +1,283 @@
+body{
+	margin: 0px;
+	padding:0px;
+}
+a{
+	text-decoration: none;
+}
+.div1{
+	background-color: rgba(100%,100%,100%,0.4);
+	position: absolute;
+	margin-top: -175px;
+	height: 48px;
+	width: 1536px;
+}
+.div2{
+	display: inline-block;
+	margin-top: -10px;
+	margin-left: 120px;
+}
+.div3{
+	display: inline-block;
+	float: right;
+	margin-top: -10px;
+	margin-right: 200px;
+	overflow: hidden;
+}
+.div4{
+	margin-top: -10px;
+}
+.div5{
+	background-color: #D87093;
+	padding:10px;
+	margin-top: -10px;
+}
+.div6{
+	height: 59px;
+	width: 1336px;
+	position: absolute;
+	left: 135px;
+	top: 160px;
+}
+.div7{
+	position: relative;
+	background-color: #f6f9fa;
+	border: 1px solid #e5e9ef;
+	overflow: hidden;
+	border-radius: 4px;
+	width:48px;
+    height:32px;
+    line-height:32px;
+    text-align:center;
+    transition:all .3s;
+    cursor:pointer;
+}
+.div7:hover{
+    background-color:#00a1d6;
+    color:#fff;
+}
+.div5 .tougao{
+    width:360px;
+    position:absolute;
+    right:0;
+    top:48px;
+    background:#fff;
+    border-radius:0 0 4px 4px; 
+    box-shadow:0 2px 4px rgba(0,0,0,.16);
+    overflow:hidden;
+    z-index:1;
+    opacity:0;
+    visibility:hidden;
+    transition: all .2s ease-in;
+}
+.div5 .tougao li{
+    cursor:pointer;
+    text-align:center;
+    width:72px;
+    height:64px;
+    float:left;
+    position:relative;
+    background:#fff;
+}
+.div5 .tougao li:hover{
+    background:#e5e9ef;
+}
+.tougao li a{
+    color:#f25d8e;
+    display:block;
+    width:100%;
+    height:100%;
+}
+.tougao li a .react{
+    display:block;
+    width:20px;
+    height:20px;
+    margin:15px auto 2px;
+    transition:all .2s;
+}
+.tougao li a .zhuanlan{
+    background-position:-534px -919px;
+}
+.tougao li a .yinpin{
+    background-position:-534px -982px;
+}
+.tougao li a .shipin{
+    background-position:-471px -919px;
+}
+.tougao li a .tougao2{
+    background-position:-471px -982px;
+}
+.tougao li a .chuangzuo{
+    background-position:-471px -1751px;
+}
+.tougao .bili-icon{
+    background:url(../素材/icons.png);
+}
+.div5 .tougao li:hover .react{
+    transform:translateY(-3px);
+}
+.div5:hover .tougao{
+    visibility:visible;
+    opacity:1;
+    top:42px;
+}
+.ax{
+	text-decoration: none;
+	color: black;
+	transform: translate(-50%, -50%);
+	cursor:pointer;
+    transition: transform .2s;
+}
+.ax:hover{
+	box-shadow:0 0 0 1920px rgba(100,100,100,.7);
+    transform: translate(-50%, -50%) scale(1.2);
+}
+.bx{
+	text-decoration: none;
+	color: black;
+}
+.cx{
+	text-decoration: none;
+	color: #f25d8e; 
+	font-size: 15px;
+	font-family: 华文楷体;
+	padding: 0 12px;
+	height: 32px;
+	width: 50px;
+	border-radius: 4px;
+	position: absolute;
+	top: 110px;
+	right: 462.5px;
+	background-color: rgba(100%,100%,100%,0.8);
+	line-height: 30px;
+	text-align: center;
+}
+.dx{
+	text-decoration: none;
+	color: black;
+	font-size: 13px;
+	font-family: 华文楷体;
+}
+ul li{
+	list-style: none;
+}
+.li1{
+	text-decoration: none;
+	float: left;
+	list-style: none;
+	padding: 10px;
+	overflow: hidden;
+}
+.li2{
+	text-decoration: none;
+	list-style: none;
+	float: left;
+	padding: 10px;
+	overflow: hidden;
+}
+.li3{
+	list-style: none;
+	float: left;
+	overflow: hidden;
+	padding: 13px;
+}
+.li4{
+
+}
+.lunbo1{
+	margin-top: 0;
+}
+.lunbo2{
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+}
+.touxiang{
+	height: 42px;
+	width: 42px;
+	border: none;
+	border-radius: 25px;
+}
+.hengfu{
+	width: 1536px;
+	height: 170px;
+}
+.divt1{
+
+}
+.divt2{
+	position: absolute;
+	margin-top: -120px;
+	margin-left: 200px;
+}
+.sousuo1{
+	padding: 0 10px;
+	float: left;
+	width: 200px;
+	height: 32px;
+	border: 0px;
+	overflow: hidden; 
+	font-size: 15px;
+	font-family: 华文楷体;
+	top: 110px;
+	position: absolute;
+	right: 240px;
+	background-color: rgba(100%,100%,100%,0.8);
+}
+.sousuo2{
+	background-color: rgba(100%,100%,100%,0.8);
+	border: 0px;
+	width: 48px;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	min-width: 0;
+	display: block;
+	position: absolute;
+	top: 110px;
+	right: 192px;
+	background-image: url(./素材/icons.png);
+	z-index: 99;
+}
+.fff{
+	
+}
+.icon1{
+	background-image: url(./素材/icons.png);
+	display: inline-block;
+}
+.divx{
+	background: #FFB6C1;
+	color: white;
+	text-align: center;
+	border-radius: 4px;
+	width: 30px;
+}
+.divz{
+	position: absolute;
+	right: 205px;
+}
+.div7 .lunbo2 .li4{
+	float: left;
+	color: #FF7300;
+	text-align: center;
+	line-height: 16px;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	overflow: hidden;
+	margin: 3px 1px;
+	border: 1px solid #FF7300;
+	background-color: #fff;
+}
+.div7 .lunbo2 .li4{
+	color: #fff;
+	line-height: 21px;
+	width: 21px;
+	height: 21px;
+	font-size: 16px;
+	margin: 0 1px;
+	border: 0;
+	background-color: #FF7300;
+	font-weight: bold;
+}
