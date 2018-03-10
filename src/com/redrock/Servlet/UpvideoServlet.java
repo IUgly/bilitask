@@ -32,33 +32,40 @@ public class UpvideoServlet extends HttpServlet {
                 ".mp4 .rmvb .avi .flv .3gp");
 //        List<String> picPaths = FileUtils.upload(request, "videopic/",
 //                ".jpg .png");
-        String rootdir = getServletContext().getRealPath("/");
+        JSONObject resp = new JSONObject();
+        if (filePaths.isEmpty() || filePaths == null) {
+            resp.put("errorcode", 1);
+            resp.put("desc", "parameter error");
+            response.getOutputStream().write(resp.toString().getBytes());
+            response.getOutputStream().flush();
+            return;
+        } else {
+            String rootdir = getServletContext().getRealPath("/");
 //        String rootdirpic = getServletContext().getRealPath("/");
 
-        List<Object> arg = new ArrayList<Object>();
-        arg.add(filePaths.get(0).substring(rootdir.length()));
+            List<Object> arg = new ArrayList<Object>();
+            arg.add(filePaths.get(0).substring(rootdir.length()));
 //        arg.add(picPaths.get(0).substring(rootdirpic.length()));
 
-        UpvideoDao ud = new UpvideoDao();
-        int errorcode = ud.Upvideo(arg);
+            UpvideoDao ud = new UpvideoDao();
+            int errorcode = ud.Upvideo(arg);
 
-        JSONObject resp = new JSONObject();
+            if (errorcode == 0) {
+                resp.put("errorcode", 0);
+                resp.put("desc", "upload success");
+                String src = String.valueOf(arg);
+                SrcPointIdDao spi = new SrcPointIdDao();
+                resp.put("videoid", spi.SrcPointId(src.substring(1, src.length() - 1)));
 
-        if (errorcode == 0) {
-            resp.put("errorcode", 0);
-            resp.put("desc", "upload success");
-            String src =String.valueOf(arg);
-            SrcPointIdDao spi = new SrcPointIdDao();
-            resp.put("videoid",spi.SrcPointId(src.substring(1,src.length()-1)));
-
-        } else if (errorcode == 2) {
-            resp.put("errorcode", 2);
-            resp.put("desc", "insert dasebase error");
-        } else if (filePaths == null) {
-            resp.put("errorcode", 3);
-            resp.put("desc", "upload fail");
+            } else if (errorcode == 2) {
+                resp.put("errorcode", 2);
+                resp.put("desc", "insert dasebase error");
+            } else if (filePaths == null) {
+                resp.put("errorcode", 3);
+                resp.put("desc", "upload fail");
+            }
+            response.getOutputStream().write(resp.toString().getBytes());
+            response.getOutputStream().flush();
         }
-        response.getOutputStream().write(resp.toString().getBytes());
-        response.getOutputStream().flush();
     }
 }
